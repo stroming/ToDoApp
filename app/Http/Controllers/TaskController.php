@@ -13,9 +13,18 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $tasks = Task::all();
+    {   
+        // $tasks = Task::where('title', '=', auth()->user()->id);
+        // $tasks = Task::where('title', 'qwe')->();
+        $tasks = Task::all()->whereIn('user_id', auth()->user()->id);
+        // $tasks = Task::find('user_id', auth()->user()->id);
+        // $tasks = Task::select('*')
+        // ->whereColumn('destination_id', 'destinations.id')
+        // ->orderByDesc('arrived_at')
+        // ->limit(1)
 
+        // dd($tasks);
+        
         return view('tasks.index', compact('tasks'));
     }
 
@@ -62,7 +71,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

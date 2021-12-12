@@ -17,21 +17,29 @@
         <form method="post" action="{{ route('tasks.update', $task->id) }}">
             @method('PATCH') 
             @csrf
-            <div class="form-group">
+          <div class="form-group">    
+              <label for="title">Title:</label>
+              <br>
+              <input type="text-area" class="form-control" name="title"/>
+              <br>
+          </div>
 
-                <label for="title">Title:</label>
-                <input type="text" class="form-control" name="title" value={{ $task->title }} />
-            </div>
+          <div class="form-group">
+              <label for="todo">Task:</label>
+              <br>
+              <input type="text-area" class="form-control" name="todo"/>
+              <br>
+          </div>
 
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <input type="text" class="form-control" name="description"  $task->description }} </div>
-
-            <div class="form-group">
-                <label for="todo">Task:</label>
-                <input type="text" class="form-control" name="todo" value={{ $task->todo }} />
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+          <div class="form-group">
+              <label for="description">Description:</label>
+              <br>
+              <input type="text-area" class="form-control" name="description"/>
+              <br>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-lg btn-primary">Update task</button>
+            <a href="{{ route('tasks.index')}}" class="btn btn-lg btn-primary">Go back</a>
         </form>
     </div>
 </div>

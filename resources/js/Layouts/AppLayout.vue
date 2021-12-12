@@ -23,9 +23,11 @@
                                     Dashboard
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('tasks.create')" :active="route().current('tasks.create')">
-                                    Create a to do task
+                                    Create Task
                                 </jet-nav-link>
-                               
+                                <jet-nav-link :href="route('tasks.index')">
+                                    My Tasks
+                                </jet-nav-link>
                             </div>
                         </div>
 
