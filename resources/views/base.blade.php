@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    @yield('main')
+  @yield('main')
   </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 </body>

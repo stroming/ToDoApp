@@ -42,12 +42,12 @@ class TaskController extends Controller
             'description'=>'required',
             'todo'=>'required'
         ]);
-
+        
         $task = new Task([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
             'todo' => $request->get('todo'),
-            'user_id' => $request->user()->id,
+            'user_id' => $request->user()->id
         ]);
 
         $task->save();
